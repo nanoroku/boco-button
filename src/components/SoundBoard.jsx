@@ -1,8 +1,13 @@
 import React from 'react';
 import SoundButton from './SoundButton';
 
+const getSoundPath = (file) =>
+    import.meta.env.DEV
+        ? `/sounds/${file}` // http://localhost:5174/sounds/nu01.mp3
+        : new URL(`sounds/${file}`, import.meta.env.BASE_URL).toString() // https://nanoroku.github.io/boco-button/sounds/nu01.mp3
+
 const sounds = [
-    { id: 1, label: 'ぬ゙っ゙!!', src: new URL('/sounds/nu01.mp3', import.meta.env.BASE_URL).href, color: '#ff0055' },
+    { id: 1, label: 'ぬ゙っ゙!!', src: getSoundPath('nu01.mp3'), color: '#ff0055' },
     // { id: 2, label: 'Wow', src: '/sounds/wow.mp3', color: '#00ffcc' },
     // { id: 3, label: 'Boing', src: '/sounds/boing.mp3', color: '#ffff00' },
     // { id: 4, label: 'Clap', src: '/sounds/clap.mp3', color: '#00ccff' },
