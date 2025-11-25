@@ -2,7 +2,7 @@ import React from 'react';
 import SoundButton from './SoundButton';
 
 const sounds = [
-    { id: 1, label: 'ぬ゙っ゙!!', src: new URL('/sounds/nu01.mp3', import.meta.env.BASE_URL).href, color: '#ff0055' },
+    { id: 1, label: 'ぬ゙っ゙!!', src: new URL('sounds/nu01.mp3', import.meta.env.BASE_URL).href, color: '#ff0055' },
     // { id: 2, label: 'Wow', src: '/sounds/wow.mp3', color: '#00ffcc' },
     // { id: 3, label: 'Boing', src: '/sounds/boing.mp3', color: '#ffff00' },
     // { id: 4, label: 'Clap', src: '/sounds/clap.mp3', color: '#00ccff' },
