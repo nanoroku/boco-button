@@ -3,17 +3,18 @@ import './SoundButton.css';
 
 const SoundButton = ({ label, soundSrc, color }) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(null);
 
     const handleClick = () => {
-        if (audioRef.current) {
-            audioRef.current.currentTime = 0;
-            audioRef.current.play();
-            setIsPlaying(true);
+        const audio = new Audio(soundSrc);
+        audio.currentTime = 0;
+        audio.play().catch(error => {
+            console.error("Audio playback failed:", error);
+        });
 
-            // Reset playing state after animation/sound
-            setTimeout(() => setIsPlaying(false), 200);
-        }
+        setIsPlaying(true);
+
+        // Reset playing state after animation/sound
+        setTimeout(() => setIsPlaying(false), 200);
     };
 
     return (
@@ -23,7 +24,6 @@ const SoundButton = ({ label, soundSrc, color }) => {
             style={{ '--btn-color': color || '#00ffcc' }}
         >
             <span className="button-label">{label}</span>
-            <audio ref={audioRef} src={soundSrc} />
             <div className="ripple"></div>
         </button>
     );
