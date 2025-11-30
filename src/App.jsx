@@ -14,8 +14,8 @@ function App() {
       <SoundBoard />
       <footer className="footer">
         <p>Developer @nanoroku:
-          <a href="https://x.com/nanoroku" target="_blank" rel="noopener noreferrer">X</a> |
-          <a href="https://youtube.com/@nanoroku_ch" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://x.com/nanoroku" target="_blanka" rel="noopener noreferrer">X</a> |
+          <a href="https://youtube.com/@nanoroku_ch" target="_blanka" rel="noopener noreferrer">YouTube</a>
         </p>
       </footer>
     </div>
